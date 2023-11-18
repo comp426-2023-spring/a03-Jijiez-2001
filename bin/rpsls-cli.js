@@ -16,7 +16,7 @@ if (args.r || args.rules) {
   process.exit(0);
 }
 
-const res = rps(args._[0]);
+const res = rpsls(args._[0]);
 try {
   console.log(JSON.stringify(res));
   process.exit(0);
