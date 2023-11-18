@@ -22,7 +22,7 @@ try {
   process.exit(0);
 } catch (err) {
   if (err instanceof RangeError) {
-    console.error(`${args._[0]} is out of range.`);
+    //console.error(`${args._[0]} is out of range.`);
     printHelp();
     printRules();
     process.exit(1);
