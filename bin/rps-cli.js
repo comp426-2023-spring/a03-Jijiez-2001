@@ -1,5 +1,5 @@
-#!/usr/bin / env node
-import { rpls } from "../lib/rpsls.js";
+#!/usr/bin/env node
+import { rps } from "../lib/rpsls.js";
 import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2));
@@ -34,6 +34,7 @@ function printHelp() {
     "  node-rps rock   Return JSON with results for RPS played against a simulated opponent.\n",
     '                  e.g {"player":"rock","opponent":"scissors","result":"win"}'
   );
+  process.exit(0);
 }
 
 function printRules() {
@@ -43,4 +44,5 @@ function printRules() {
     "  - Paper COVERS Rock\n",
     "  - Rock CRUSHES Scissors"
   );
+  process.exit(0);
 }
