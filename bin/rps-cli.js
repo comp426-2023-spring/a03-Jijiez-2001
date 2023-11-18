@@ -4,24 +4,30 @@ import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2));
 
+//handle with help documentation
 if (args.h || args.help) {
   printHelp();
   process.exit(0);
 }
 
+//handle with rules documentation
 if (args.r || args.rules) {
   printRules();
   process.exit(0);
 }
 
 const res = rps(args._[0]);
+
 try {
   console.log(JSON.stringify(res));
+  process.exit(0);
 } catch (err) {
-  console.error(`Error: ${err.message}\n`);
-  printHelp();
-  printRules();
-  process.exit(1);
+  if (err instanceof RangeError) {
+    console.error(`${res} is out of range`);
+    printHelp();
+    printRules();
+    process.exit(1);
+  }
 }
 
 function printHelp() {
