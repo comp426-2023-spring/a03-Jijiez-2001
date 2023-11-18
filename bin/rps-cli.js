@@ -32,23 +32,28 @@ try {
 
 function printHelp() {
   console.log(
-    "Usage: node-rps [SHOT]\nPlay Rock Paper Scissors (RPS)\n\n",
-    "  -h, --help      display this help message and exit\n",
-    "  -r, --rules     display the rules and exit\n\nExamples:\n",
-    "  node-rps        Return JSON with single player RPS result.\n",
-    '                  e.g. {"player":"rock"}\n',
-    "  node-rps rock   Return JSON with results for RPS played against a simulated opponent.\n",
-    '                  e.g {"player":"rock","opponent":"scissors","result":"win"}'
+    "Usage: node-rps [SHOT]\n" +
+      "Play Rock Paper Scissors (RPS):\n" +
+      " \n" +
+      "  -h, --help       display this help message and exit\n" +
+      "  -r, --rules      display the rule and exit\n" +
+      " \n" +
+      "Examples:\n" +
+      "  node-rps         Return JSON with single player RPS result.\n" +
+      '                   e.g. {"player":"rock"}\n' +
+      "  node-rps rock    Return JSON with results for RPS played against a simulated opponent.\n" +
+      '                   e.g. {"player":"rock","opponent":"scissors","result":"win"}\n'
   );
   process.exit(0);
 }
 
 function printRules() {
   console.log(
-    "Rules for Rock Paper Scissors:\n\n",
-    "  - Scissors CUTS Paper\n",
-    "  - Paper COVERS Rock\n",
-    "  - Rock CRUSHES Scissors"
+    "Rules for Rock Paper Scissors:\n" +
+      "\n" +
+      "  - Scissors CUTS Paper\n" +
+      "  - Paper COVERS Rock\n" +
+      "  - Rock CRUSHES Scissors\n"
   );
   process.exit(0);
 }
