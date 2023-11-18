@@ -1,5 +1,5 @@
 {
-  "name": "a03",
+  "name": "node-rpsls",
   "version": "0.0.1",
   "description": "paper_scissor_stone_game",
   "main": "./lib/rpsls.js",
