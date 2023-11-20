@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { rps } from "../lib/rpsls.js";
 import minimist from "minimist";
 
@@ -8,25 +9,25 @@ const args = minimist(process.argv.slice(2));
 if (args.h || args.help) {
   printHelp();
   process.exit(0);
-} else if (args.r || args.rules) {
+}
+
+if (args.r || args.rules) {
   //handle with rules documentatio
   printRules();
   process.exit(0);
-} else {
-  const res = rps(args._[0]);
-  try {
-    console.log(JSON.stringify(res));
-    process.exit(0);
-  } catch (err) {
-    //check if rangeError
-    if (err instanceof RangeError) {
-      //console.error(`${args._[0]} is out of range.`);
-      printRules();
-    } else {
-      // Handle other potential errors
-      console.error("An unexpected error occurred:", err);
-      process.exit(1);
-    }
+}
+
+const res = rps(argv._[0]);
+try {
+  console.log(JSON.stringify(res));
+  process.exit(0);
+} catch (err) {
+  //check if rangeError
+  if (err instanceof RangeError) {
+    //console.error(`${args._[0]} is out of range.`);
+    printHelp();
+    printRules();
+    process.exit(1);
   }
 }
 

@@ -23,10 +23,8 @@ try {
 } catch (err) {
   if (err instanceof RangeError) {
     //console.error(`${args._[0]} is out of range.`);
+    printHelp();
     printRules();
-  } else {
-    // Handle other potential errors
-    console.error("An unexpected error occurred:", err);
     process.exit(1);
   }
 }
