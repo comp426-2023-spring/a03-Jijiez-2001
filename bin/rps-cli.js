@@ -20,7 +20,7 @@ if (args.h || args.help) {
   } catch (err) {
     //check if rangeError
     if (err instanceof RangeError) {
-      console.error("${args._[0]} is out of range.");
+      console.error(`${args._[0]} is out of range.`);
       printHelp();
       printRules();
     }
