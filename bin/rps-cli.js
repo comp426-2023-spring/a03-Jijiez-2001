@@ -20,13 +20,13 @@ if (args.h || args.help) {
   } catch (err) {
     //check if rangeError
     if (err instanceof RangeError) {
-      console.error(`${args._[0]} is out of range.`);
+      //console.error(`${args._[0]} is out of range.`);
       printRules();
     } else {
       // Handle other potential errors
       console.error("An unexpected error occurred:", err);
+      process.exit(1);
     }
-    process.exit(1);
   }
 }
 
