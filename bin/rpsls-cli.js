@@ -16,10 +16,9 @@ if (args.r || args.rules) {
   process.exit(0);
 }
 
-const res = rpsls(args._[0]);
 try {
+  const res = rpsls(args._[0]);
   console.log(JSON.stringify(res));
-  process.exit(0);
 } catch (err) {
   if (err instanceof RangeError) {
     //console.error(`${args._[0]} is out of range.`);

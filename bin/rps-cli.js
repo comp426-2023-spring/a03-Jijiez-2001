@@ -17,10 +17,9 @@ if (args.r || args.rules) {
   process.exit(0);
 }
 
-const res = rps(argv._[0]);
 try {
+  const res = rps(args._[0]);
   console.log(JSON.stringify(res));
-  process.exit(0);
 } catch (err) {
   //check if rangeError
   if (err instanceof RangeError) {
