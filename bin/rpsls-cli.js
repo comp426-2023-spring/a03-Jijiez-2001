@@ -36,7 +36,6 @@ function printHelp() {
     '                    e.g. {"player":"rock"}\n',
     '  node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.\n',
     '                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`);
-  process.exit(0);
 }
 
 function printRules() {
@@ -51,5 +50,4 @@ function printRules() {
     ' - Paper DISPROVES Spock\n',
     ' - Spock VAPORIZES Rock\n',
     ' - Rock CRUSHES Scissors`);
-  process.exit(0);
 }
