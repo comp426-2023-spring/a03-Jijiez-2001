@@ -26,6 +26,7 @@ try {
     printHelp();
     printRules();
   }
+  process.exit(1);
 }
 
 function printHelp() {

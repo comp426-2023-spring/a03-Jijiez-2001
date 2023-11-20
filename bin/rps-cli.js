@@ -24,6 +24,7 @@ if (args.h || args.help) {
       printHelp();
       printRules();
     }
+    process.exit(1);
   }
 }
 
