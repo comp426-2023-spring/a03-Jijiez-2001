@@ -8,32 +8,21 @@ const args = minimist(process.argv.slice(2));
 if (args.h || args.help) {
   printHelp();
   process.exit(0);
-}
-
-//handle with rules documentation
-if (args.r || args.rules) {
+} else if (args.r || args.rules) {
+  //handle with rules documentatio
   printRules();
   process.exit(0);
-}
-
-const res = rps(args._[0]);
-
-try {
-  console.log(JSON.stringify(res));
-  process.exit(0);
-} catch (err) {
-  if (err instanceof RangeError) {
-    console.log(
-      " Rules for Rock Paper Scissors:",
-      "\n\n",
-      "  - Scissors CUTS Paper",
-      "\n",
-      "  - Paper COVERS Rock",
-      "\n",
-      "  - Rock CRUSHES Scissors"
-    );
-    //printHelp();
-    //printRules();
+} else {
+  const res = rps(args._[0]);
+  try {
+    console.log(JSON.stringify(res));
+    process.exit(0);
+  } catch (err) {
+    if (err instanceof RangeError) {
+      console.error(`${args._[0]} is out of range.`);
+      printHelp();
+      printRules();
+    }
   }
 }
 
